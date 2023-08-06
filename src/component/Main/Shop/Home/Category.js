@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Dimensions, StyleSheet, Image } from 'react-native'
+import { View, Text, Dimensions, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import Swiper from 'react-native-swiper'
 
 const { height, width } = Dimensions.get('window')
@@ -8,17 +8,30 @@ import littleIcon from '/Users/mluan/react_native/MyShop/src/media/temp/little.j
 import maxiIcon from '/Users/mluan/react_native/MyShop/src/media/temp/maxi.jpg'
 import partyIcon from '/Users/mluan/react_native/MyShop/src/media/temp/party.jpg'
 
-const Category = () => {
+const Category = ({navigation}) => {
     return (
         <View style={styles.wrapper}>
             <View style={{ flex: 1, justifyContent: 'center' }}>
                 <Text style={styles.textStyle}>LIST OF CATEGORY</Text>
             </View>
-            <View style={{flex:4}}>
+            <View style={{ flex: 4 }}>
                 <Swiper  >
-                    <Image source={littleIcon} style={styles.imageStyle}/>
-                    <Image source={maxiIcon} style={styles.imageStyle} />
-                    <Image source={partyIcon} style={styles.imageStyle} />
+                    <TouchableOpacity onPress={() => {
+                        navigation.navigate('ListProduct');
+                    }}>
+                        <Image source={littleIcon} style={styles.imageStyle} />
+                        <Text>Maxi</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => {
+                        navigation.navigate('ListProduct');
+                    }}>
+                        <Image source={maxiIcon} style={styles.imageStyle} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => {
+                        navigation.navigate('ListProduct');
+                    }}>
+                        <Image source={partyIcon} style={styles.imageStyle} />
+                    </TouchableOpacity>
                 </Swiper>
             </View>
         </View>
@@ -33,7 +46,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFF',
         height: height * 0.35,
         margin: 10,
-        justifyContent:'space-between',
+        justifyContent: 'space-between',
         shadowColor: '#2E272B',
         shadowOffset: { width: 0, height: 3 },
         shadowOpacity: 0.2,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Image, View, Text, StyleSheet, Dimensions } from 'react-native'
+import { Image, View, Text, StyleSheet, Dimensions,TouchableOpacity } from 'react-native'
 
 import sp1 from '/Users/mluan/react_native/MyShop/src/media/temp/sp1.jpeg'
 import sp2 from '/Users/mluan/react_native/MyShop/src/media/temp/sp2.jpeg'
@@ -7,34 +7,42 @@ import sp3 from '/Users/mluan/react_native/MyShop/src/media/temp/sp3.jpeg'
 import sp4 from '/Users/mluan/react_native/MyShop/src/media/temp/sp4.jpeg'
 import sp5 from '/Users/mluan/react_native/MyShop/src/media/temp/sp5.jpeg'
 
-const TopProduct = () => {
+const TopProduct = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.titleContainer}>
                 <Text style={styles.tittle}>TOP PRODUCT</Text>
             </View>
             <View style={styles.body}>
-                <View style={styles.productContainer}>
-                    <Image source={sp1} style={styles.productImage} />
+                <TouchableOpacity style={styles.productContainer} onPress={()=>{
+                    navigation.navigate('ProductDetail');
+                }}>
+                    <Image source={sp1} style={styles.productImage}  />
                     <Text style={styles.productName}>PRODUCT NAME</Text>
                     <Text style={styles.productPrice}>400$</Text>
-                </View>
-                <View style={styles.productContainer}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.productContainer} onPress={()=>{
+                    navigation.navigate('ProductDetail');
+                }}>
                     <Image source={sp2} style={styles.productImage} />
                     <Text style={styles.productName}>PRODUCT NAME</Text>
                     <Text style={styles.productPrice}>250$</Text>
-                </View>
+                </TouchableOpacity>
                 <View style={{height:10,width}}></View>
-                <View style={styles.productContainer}>
+                <TouchableOpacity style={styles.productContainer} onPress={()=>{
+                    navigation.navigate('ProductDetail');
+                }}>
                     <Image source={sp3} style={styles.productImage} />
                     <Text style={styles.productName}>PRODUCT NAME</Text>
                     <Text style={styles.productPrice}>250$</Text>
-                </View>
-                <View style={styles.productContainer}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.productContainer} onPress={()=>{
+                    navigation.navigate('ProductDetail');
+                }}>
                     <Image source={sp4} style={styles.productImage} />
                     <Text style={styles.productName}>PRODUCT NAME</Text>
                     <Text style={styles.productPrice}>250$</Text>
-                </View>
+                </TouchableOpacity>
             </View>
         </View>
     )

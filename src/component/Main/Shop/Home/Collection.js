@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Dimensions, StyleSheet, Image } from 'react-native'
+import { View, Text, Dimensions, StyleSheet, Image,TouchableOpacity } from 'react-native'
 
 const { height, width } = Dimensions.get('window')
 
@@ -11,9 +11,9 @@ const Collection = () => {
             <View style={{ flex: 1, justifyContent: 'center' }}>
                 <Text style={styles.textStyle} >SPRING COLLECTION</Text>
             </View>
-            <View style={{ flex: 4 }}>
+            <TouchableOpacity style={{ flex: 4 }}>
                 <Image source={bannerImg} style={styles.imageStyle} />
-            </View>
+            </TouchableOpacity>
         </View>
     )
 }

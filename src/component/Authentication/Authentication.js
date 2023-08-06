@@ -6,7 +6,7 @@ const iconBack = require('/Users/mluan/react_native/MyShop/src/media/appIcon/bac
 const menuIcon1 = require('/Users/mluan/react_native/MyShop/src/media/appIcon/ic_logo.png');
 
 const Authentication = ({navigation}) => {
-
+    
     const[sign,setSign] = useState(true);
     const signIn = () => {
         setSign(true);
@@ -38,7 +38,7 @@ const Authentication = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.row1}>
-                <TouchableOpacity onPress={({navigation}) => { navigation.navigate('Shop') }}>
+                <TouchableOpacity onPress={() => { navigation.navigate('Shop') }}>
                     <Image source={iconBack} style={styles.iconStyle} />
                 </TouchableOpacity>
                 <Text style={styles.tittleStyle}>Wearing a Dress</Text>

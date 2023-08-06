@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, Dimensions, Image } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
@@ -10,32 +11,46 @@ import Contact from './Contact/Contact';
 import Cart from './Cart/Cart';
 import Search from './Search/Search';
 
-import Header from './Header'
+import Header from './Header';
 
-// import home from '/Users/mluan/react_native/MyShop/src/media/appIcon/home.png'
-// import home0 from '/Users/mluan/react_native/MyShop/src/media/appIcon/home0.png'
-import cart from '/Users/mluan/react_native/MyShop/src/media/appIcon/cart.png'
-import cart0 from '/Users/mluan/react_native/MyShop/src/media/appIcon/cart0.png'
-import contact from '/Users/mluan/react_native/MyShop/src/media/appIcon/contact.png'
-import contact0 from '/Users/mluan/react_native/MyShop/src/media/appIcon/contact0.png'
-import search from '/Users/mluan/react_native/MyShop/src/media/appIcon/search.png'
-import search0 from '/Users/mluan/react_native/MyShop/src/media/appIcon/search0.png'
-
-const home0 = require('/Users/mluan/react_native/MyShop/src/media/appIcon/home0.png');
+const home = require('../../../media/appIcon/home.png');
+const home0 = require('../../../media/appIcon/home0.png');
+const cart = require('../../../media/appIcon/cart.png');
+const cart0 = require('../../../media/appIcon/cart0.png');
+const contact = require('../../../media/appIcon/contact.png');
+const contact0 = require('../../../media/appIcon/contact0.png');
+const search = require('../../../media/appIcon/search.png');
+const search0 = require('../../../media/appIcon/search0.png');
 
 const Shop = ({ navigation }) => {
     return (
         <View style={{ flex: 1, backgroundColor: '#85A6C9' }}>
             <Header navigation={navigation}/>
-            <Tab.Navigator screenOptions={{ headerShown: false }}>
-                <Tab.Screen name="Home" component={Home} options={{
+            <Tab.Navigator screenOptions={{ headerShown: false, tabBarActiveTintColor: 'green', tabBarInactiveTintColor:'gray' }}>
+                <Tab.Screen name="Home" component={Home} screenOptions 
+                options={{
                     tabBarIcon : () => { 
-                        <Image source={home0} style={{width:20,height:20}} />
+                        return <Image source={home} style={{width:30,height:30}} />
                     }
                 }}/>
-                <Tab.Screen name="Cart" component={Cart} />
-                <Tab.Screen name="Search" component={Search} />
-                <Tab.Screen name="Contact" component={Contact} />
+                <Tab.Screen name="Cart" component={Cart} screenOptions 
+                options={{
+                    tabBarIcon : () => { 
+                        return <Image source={cart} style={{width:30,height:30}} />
+                    }
+                }}/>
+                <Tab.Screen name="Search" component={Search} screenOptions 
+                options={{
+                    tabBarIcon : () => { 
+                        return <Image source={search} style={{width:30,height:30}} />
+                    }
+                }}/>
+                <Tab.Screen name="Contact" component={Contact} screenOptions 
+                options={{
+                    tabBarIcon : () => { 
+                        return <Image source={contact} style={{width:30,height:30}} />
+                    }
+                }}/>
             </Tab.Navigator>
         </View>
     )
