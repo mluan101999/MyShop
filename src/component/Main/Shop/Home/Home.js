@@ -10,10 +10,11 @@ import ProductDetail from './ProductDetail/ProductDetail';
 const Stack = createNativeStackNavigator();
 
 const Home = () => {
+    const type = {type}
     return (
         <SafeAreaView style={{ flex: 1 }}>
-                <Stack.Navigator initialRouteName="HomeVIew" screenOptions={{headerShown:false}}>
-                    <Stack.Screen name="HomeView" component={HomeView} navigator = {navigator} />
+                <Stack.Navigator initialRouteName="HomeView" screenOptions={{headerShown:false}}>
+                    <Stack.Screen name="HomeView" component={HomeView} navigator = {navigator} type={type} />
                     <Stack.Screen name="ListProduct" component={ListProduct} />
                     <Stack.Screen name="ProductDetail" component={ProductDetail} />
                 </Stack.Navigator>

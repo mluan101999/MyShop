@@ -14,11 +14,10 @@ const ListProduct = ({ navigation }) => {
             <ScrollView style={styles.wrapper}>
                 {/* Button and Text */}
                 <View style={styles.header}>
-                    <TouchableOpacity onPress={()=>{
+                    <TouchableOpacity onPress={() => {
                         navigation.goBack();
                     }}>
-
-                    <Image source={backList} style={styles.backIcon} />
+                        <Image source={backList} style={styles.backIcon} />
                     </TouchableOpacity>
                     <Text style={styles.tittleStyle}>Party Dress</Text>
                     <View style={{ width: 30 }} />
@@ -32,7 +31,7 @@ const ListProduct = ({ navigation }) => {
                         <Text style={styles.txtMatetial}>Material silk</Text>
                         <View style={styles.lastRowInfo}>
                             <Text style={styles.txtColor}>Color RoyalBlue</Text>
-                            <View style={{backgroundColor:'cyan',height:16,width:16,borderRadius:8}}/>
+                            <View style={{ backgroundColor: 'cyan', height: 16, width: 16, borderRadius: 8 }} />
                             <TouchableOpacity>
                                 <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
                             </TouchableOpacity>
@@ -47,7 +46,7 @@ const ListProduct = ({ navigation }) => {
                         <Text style={styles.txtMatetial}>Material silk</Text>
                         <View style={styles.lastRowInfo}>
                             <Text style={styles.txtColor}>Color RoyalBlue</Text>
-                            <View style={{backgroundColor:'cyan',height:16,width:16,borderRadius:8}}/>
+                            <View style={{ backgroundColor: 'cyan', height: 16, width: 16, borderRadius: 8 }} />
                             <TouchableOpacity>
                                 <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
                             </TouchableOpacity>
@@ -62,7 +61,7 @@ const ListProduct = ({ navigation }) => {
                         <Text style={styles.txtMatetial}>Material silk</Text>
                         <View style={styles.lastRowInfo}>
                             <Text style={styles.txtColor}>Color RoyalBlue</Text>
-                            <View style={{backgroundColor:'cyan',height:16,width:16,borderRadius:8}}/>
+                            <View style={{ backgroundColor: 'cyan', height: 16, width: 16, borderRadius: 8 }} />
                             <TouchableOpacity>
                                 <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
                             </TouchableOpacity>
@@ -77,7 +76,7 @@ const ListProduct = ({ navigation }) => {
                         <Text style={styles.txtMatetial}>Material silk</Text>
                         <View style={styles.lastRowInfo}>
                             <Text style={styles.txtColor}>Color RoyalBlue</Text>
-                            <View style={{backgroundColor:'cyan',height:16,width:16,borderRadius:8}}/>
+                            <View style={{ backgroundColor: 'cyan', height: 16, width: 16, borderRadius: 8 }} />
                             <TouchableOpacity>
                                 <Text style={styles.txtShowDetail}>SHOW DETAILS</Text>
                             </TouchableOpacity>
@@ -100,7 +99,7 @@ const styles = StyleSheet.create({
         shadowColor: '2E272B',
         shadowOffset: { width: 0, height: 3 },
         shadowOpacity: 0.2,
-        paddingHorizontal:10
+        paddingHorizontal: 10
     },
     header: {
         height: 50,
@@ -120,43 +119,43 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     productContainer: {
-        flexDirection:'row',
-        paddingVertical:15,
-        borderTopColor:'#D6D6D6',
-        borderTopWidth:1,
-       
+        flexDirection: 'row',
+        paddingVertical: 15,
+        borderTopColor: '#D6D6D6',
+        borderTopWidth: 1,
+
     },
     productImage: {
         width: 90,
         height: (90 * 452) / 361
     },
     productInfo: {
-        justifyContent:'space-between',
-        marginLeft:20,
-        flex:1
+        justifyContent: 'space-between',
+        marginLeft: 20,
+        flex: 1
     },
     lastRowInfo: {
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center'
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
     },
-    txtName:{
-        color:'#BCBCBC',
+    txtName: {
+        color: '#BCBCBC',
         fontSize: 20,
-        fontWeight:'400'
+        fontWeight: '400'
     },
-    txtPrice:{
-        color:'#B10D65'
+    txtPrice: {
+        color: '#B10D65'
     },
-    txtMatetial:{
-        color:'black'
+    txtMatetial: {
+        color: 'black'
     },
-    txtColor:{
-        color:'black'
+    txtColor: {
+        color: 'black'
     },
-    txtShowDetail:{
-        color:'#B10D65',
-        fontSize:11
+    txtShowDetail: {
+        color: '#B10D65',
+        fontSize: 11
     },
 })
 export default ListProduct
