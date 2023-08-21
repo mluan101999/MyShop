@@ -2,17 +2,26 @@ import React, { Component,useState,useEffect } from 'react'
 import { Image, View, Text, StyleSheet, Dimensions,TouchableOpacity } from 'react-native'
 
 const TopProduct = ({navigation,product}) => {
-    product.map(item => console.log(`http://10.79.13.167/api/app/images/product/${item.images[0]}`))
     return (
         <View style={styles.container}>
             <View style={styles.titleContainer}>
                 <Text style={styles.tittle}>TOP PRODUCT</Text>
             </View>
             <View style={styles.body}>
-                {product.map(item =><TouchableOpacity style={styles.productContainer} onPress={()=>{
-                    navigation.navigate('ProductDetail');
+                {product.map(item =>
+                <TouchableOpacity style={styles.productContainer}  key={item.id} onPress={()=>{
+                    navigation.navigate('ProductDetail',{
+                        productName: item.name,
+                        productImage: item.images,
+                        des: item.description,
+                        price: item.price,
+                        material: item.material,
+                        color: item.color,
+                        id: item.id,
+                    });
+                    
                 }}>
-                    <Image source={{uri: `http://10.79.13.167/api/app/images/product/${item.images[0]}`}} style={styles.productImage}  />
+                    <Image source={{uri: `http://10.79.13.87/api/app/images/product/${item.images[0]}`}} style={styles.productImage}  />
                     <Text style={styles.productName}>{item.name.toUpperCase()}</Text>
                     <Text style={styles.productPrice}>{item.price}$</Text>
                 </TouchableOpacity>)}            

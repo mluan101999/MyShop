@@ -10,7 +10,7 @@ const HomeView = ({navigation}) => {
     const [product,setProduct] = useState([]);
     const getAPI = async () => {
         try {
-            const response = await fetch('http://10.79.13.167/api/app/');
+            const response = await fetch('http://10.79.13.87/api/app/');
             const json = await response.json();
             setType(json.type);
             setProduct(json.product);

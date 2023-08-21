@@ -16,7 +16,7 @@ const Category = ({ navigation, type}) => {
             <View style={{flex: 4}}>           
             <Swiper>
                     {type.map(item => 
-                         <TouchableOpacity onPress={() => {
+                         <TouchableOpacity key={item.id} onPress={() => {
                             navigation.navigate('ListProduct');
                         }}>
                             <Image source={{uri: `http://10.79.13.167/api/app/images/type/${item.image}`}} style={styles.imageStyle}/>
